@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import {Title1} from "@fluentui/react-components";
+import React from "react";
+import Core from "./Core";
+import Assign from "./pages/Assign";
+import Configure from "./pages/Configure";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    [Core.state, Core.setState] = React.useState(Core.STATE.CONFIGURE);
+    if (Core.state === Core.STATE.CONFIGURE) {
+        return <Configure/>;
+    } else if (Core.state === Core.STATE.ASSIGN) {
+        return <Assign/>;
+    } else if (Core.state === Core.STATE.CHECK) {
+        return <Title1>123</Title1>;
+    }
 }
 
 export default App;
