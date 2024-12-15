@@ -1,5 +1,5 @@
 import Core from "@/Core";
-import {makeStyle} from "@/Utils";
+import {makeStyle, Space} from "@/Utils";
 import {
     Button,
     Dialog,
@@ -31,7 +31,9 @@ function Assign() {
 
     return (<>
         <Title1 className={center} align="center">分配角色</Title1>
+        <Space height="20px"/>
         <Title2 className={center} align="center">{playerId + " 号玩家"}</Title2>
+        <Space height="20px"/>
         <Dialog modalType={"alert"} surfaceMotion={null} open={open} onOpenChange={(event, data) => setOpen(data.open)}>
             <DialogTrigger disableButtonEnhancement>
                 <Button className={center} appearance={"primary"}>查看</Button>
