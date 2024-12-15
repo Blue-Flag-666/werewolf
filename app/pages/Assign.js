@@ -1,3 +1,5 @@
+import Core from "@/Core";
+import {makeStyle} from "@/Utils";
 import {
     Button,
     Dialog,
@@ -11,8 +13,6 @@ import {
     Title2
 } from "@fluentui/react-components";
 import React from "react";
-import Core from "../Core";
-import {makeStyle} from "../Utils";
 
 function Assign() {
     const [open, setOpen] = React.useState(false);

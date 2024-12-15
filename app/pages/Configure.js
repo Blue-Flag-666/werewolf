@@ -1,7 +1,7 @@
+import Core from "@/Core";
+import {makeStyle, Space} from "@/Utils";
 import {Button, Divider, Label, SpinButton, Title1} from "@fluentui/react-components";
 import React from "react";
-import Core from "../Core";
-import {makeStyle, Space} from "../Utils";
 
 function Character({name, character}) {
     const labelStyle = makeStyle({display: "inline-block", minWidth: "75px"});
@@ -34,11 +34,9 @@ function Configure() {
     Core.characters.forEach((character, name) => {
         if (character.camp === Core.CAMP.COMMONER || character.camp === Core.CAMP.GOOD) {
             good.push(<Character key={name} name={name} character={character}/>);
-        }
-        if (character.camp === Core.CAMP.WEREWOLF) {
+        } else if (character.camp === Core.CAMP.WEREWOLF) {
             werewolf.push(<Character key={name} name={name} character={character}/>);
-        }
-        if (character.camp >= Core.CAMP.THIRD) {
+        } else {
             third.push(<Character key={name} name={name} character={character}/>);
         }
     });
@@ -68,13 +66,21 @@ function Configure() {
 
     return (<>
         <Title1 className={center} align={"center"}>好人阵营</Title1>
+        <Space height="10px"/>
         {good}
+        <Space height="10px"/>
         <Divider appearance={"subtle"}/>
+        <Space height="10px"/>
         <Title1 className={center} align={"center"}>狼人阵营</Title1>
+        <Space height="10px"/>
         {werewolf}
+        <Space height="10px"/>
         <Divider appearance={"subtle"}/>
+        <Space height="10px"/>
         <Title1 className={center} align={"center"}>第三方阵营</Title1>
+        <Space height="10px"/>
         {third}
+        <Space height="10px"/>
         <Divider appearance={"subtle"}/>
         <Space height="10px"/>
         <Button className={center} appearance={"primary"} onClick={confirm}>确定</Button>

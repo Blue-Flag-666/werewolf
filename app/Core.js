@@ -1,4 +1,4 @@
-import {shuffle} from "./Utils";
+import {shuffle} from "@/Utils";
 
 class Player {
     constructor(id, name, character, priority) {
@@ -29,7 +29,7 @@ class Character {
 
 class Core {
     static STATE = {
-        CONFIGURE: 0, ASSIGN: 1, CHECK: 2
+        CONFIGURE: 0, ASSIGN: 1, CHECK: 2, WAIT: 3, GAME: 4
     };
 
     static state = null;
